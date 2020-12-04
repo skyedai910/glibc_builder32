@@ -27,8 +27,8 @@ jobs:
 
       - name: Login Docker
         env:
-          username: ${{ secrets.Username }}
-          password: ${{ secrets.Password }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
         run: docker login --username=${username} --password=${password}
 
       - name: Build glibc2.19
@@ -37,9 +37,4 @@ jobs:
           
       - name: Push glibc2.19
         run: docker push skye231/glibc_builder32:2.19
-      
-      - name: Finsh
-        run: echo Finsh~
 
-
-         
